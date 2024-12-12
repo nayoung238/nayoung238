@@ -1,7 +1,7 @@
 # 실패 속에서 본질을 찾아내는 나영입니다 👋
 
 **불확실한 상황**에서 최적의 솔루션을 찾아가는 것을 좋아합니다.<br>
-'일단 돌아가는' 대신 '**제대로 돌아가는**' 코드 작성을 좋아합니다.
+'일단 돌아가는' 이 아닌 '**제대로 돌아가는**' 코드 작성을 좋아합니다.
 
 <br>
 
@@ -15,7 +15,7 @@
 
 - [Kafka Streams 윈도우 집계로 DB I/O 최소화](https://medium.com/@im_zero/kafka-streams%EC%9D%98-window-results-%EC%BB%A8%ED%8A%B8%EB%A1%A4%ED%95%98%EA%B8%B0-3c20c360cf02)한 경험, 그러나...😅
     - 배치 단위로 쓰기 버퍼링 목표 달성! (사용 중인 MySQL, MongoDB 쓰기 버퍼링 기능에서 아이디어 획득)
-    - 그러나 Drop Event 처리를 위한 **Window + Grace 기간에 따른 버퍼링**은 메모리 문제로 적용 실패
+    - 그러나 Drop Event 처리를 위한 **Window + Grace 기간에 따른 버퍼링**이 메모리 문제로 이어져 적용 실패
 
 <br>
 
@@ -32,43 +32,36 @@
 <br>
 
 ## 기술 스택
+
 #### DEV
 
-<img alt="Static Badge" src="https://img.shields.io/badge/Java-%23007396?style=flat&logo=Java&logoColor=white">
-<img alt="Static Badge" src="https://img.shields.io/badge/Spring%20Boot-%236DB33F?style=flat&logo=Spring%20Boot&logoColor=white">
-<br>
+<img src="https://img.shields.io/badge/Java-%23007396?style=flat&logo=Java&logoColor=white"> <img alt="Static Badge" src="https://img.shields.io/badge/Spring%20Boot-%236DB33F?style=flat&logo=Spring%20Boot&logoColor=white"> <img alt="Static Badge" src="https://img.shields.io/badge/Spring Data JPA-%236DB33F?style=flat&logo=Spring&logoColor=white"> <img alt="Static Badge" src="https://img.shields.io/badge/Spring Cloud Gateway-%236DB33F?style=flat&logo=Spring&logoColor=white">
 
-<img alt="Static Badge" src="https://img.shields.io/badge/Apache%20Kafka-%23231F20?style=flat&logo=Apache%20Kafka&logoColor=white">
-<img alt="Static Badge" src="https://img.shields.io/badge/Redis-%23FF4438?style=flat&logo=Redis&logoColor=white">
-<br>
+<img alt="Static Badge" src="https://img.shields.io/badge/Apache%20Kafka-%23231F20?style=flat&logo=Apache%20Kafka&logoColor=white"> <img alt="Static Badge" src="https://img.shields.io/badge/Redis-%23FF4438?style=flat&logo=Redis&logoColor=white">
 
 <img alt="Static Badge" src="https://img.shields.io/badge/Resilience4J-%23231F20?style=flat&logo=Resilience4J&logoColor=white">
 
 
 #### DB
 
-<img alt="Static Badge" src="https://img.shields.io/badge/MySQL-%234479A1?style=flat&logo=MySQL&logoColor=white">
-<img alt="Static Badge" src="https://img.shields.io/badge/MongoDB-%2347A248?style=flat&logo=MongoDB&logoColor=white">
-
+<img alt="Static Badge" src="https://img.shields.io/badge/MySQL-%234479A1?style=flat&logo=MySQL&logoColor=white"> <img alt="Static Badge" src="https://img.shields.io/badge/MongoDB-%2347A248?style=flat&logo=MongoDB&logoColor=white">
 
 #### Test & Monitoring
 
+
 <img alt="Static Badge" src="https://img.shields.io/badge/JUnit5-%2325A162?style=flat&logo=JUnit5&logoColor=white">
-<br>
 
-<img alt="Static Badge" src="https://img.shields.io/badge/prometheus-%23E6522C?style=flat&logo=prometheus&logoColor=white">
-<img alt="Static Badge" src="https://img.shields.io/badge/Grafana-%23F46800?style=flat&logo=Grafana&logoColor=white">
-<img alt="Static Badge" src="https://img.shields.io/badge/Elastic%20Stack-%23005571?style=flat&logo=Elastic%20Stack&logoColor=white">
-
-
+<img alt="Static Badge" src="https://img.shields.io/badge/prometheus-%23E6522C?style=flat&logo=prometheus&logoColor=white"> <img alt="Static Badge" src="https://img.shields.io/badge/Grafana-%23F46800?style=flat&logo=Grafana&logoColor=white"> <img alt="Static Badge" src="https://img.shields.io/badge/Elastic%20Stack-%23005571?style=flat&logo=Elastic%20Stack&logoColor=white">
 
 ***
 <br>
 
+<div align="left>
 <a href="https://github.com/devxb/gitanimals">
 <img
   src="https://render.gitanimals.org/farms/imzero238"
   width="600"
-  height="200"
+  height="300"
 />
 </a>
+</div>
