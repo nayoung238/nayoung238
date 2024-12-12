@@ -39,8 +39,12 @@
 
 #### DEV
 
-<img src="https://img.shields.io/badge/Java-%23007396?style=flat&logo=Java&logoColor=white"> <img alt="Static Badge" src="https://img.shields.io/badge/Spring%20Boot-%236DB33F?style=flat&logo=Spring%20Boot&logoColor=white"> <img alt="Static Badge" src="https://img.shields.io/badge/Spring Data JPA-%236DB33F?style=flat&logo=Spring&logoColor=white"> <img alt="Static Badge" src="https://img.shields.io/badge/Spring Cloud Gateway-%236DB33F?style=flat&logo=Spring&logoColor=white">
+<img src="https://img.shields.io/badge/Java-%23007396?style=flat&logo=Java&logoColor=white">
+
+<img alt="Static Badge" src="https://img.shields.io/badge/Spring%20Boot-%236DB33F?style=flat&logo=Spring%20Boot&logoColor=white"> <img alt="Static Badge" src="https://img.shields.io/badge/Spring Data JPA-%236DB33F?style=flat&logo=Spring&logoColor=white"> <img alt="Static Badge" src="https://img.shields.io/badge/Spring Cloud Gateway-%236DB33F?style=flat&logo=Spring&logoColor=white">
+
 <img alt="Static Badge" src="https://img.shields.io/badge/Apache%20Kafka-%23231F20?style=flat&logo=Apache%20Kafka&logoColor=white"> <img alt="Static Badge" src="https://img.shields.io/badge/Redis-%23FF4438?style=flat&logo=Redis&logoColor=white">
+
 <img alt="Static Badge" src="https://img.shields.io/badge/Resilience4J-%23231F20?style=flat&logo=Resilience4J&logoColor=white">
 
 
@@ -50,10 +54,11 @@
 
 #### Test & Monitoring
 
-
 <img alt="Static Badge" src="https://img.shields.io/badge/JUnit5-%2325A162?style=flat&logo=JUnit5&logoColor=white">
-<img alt="Static Badge" src="https://img.shields.io/badge/prometheus-%23E6522C?style=flat&logo=prometheus&logoColor=white"> <img alt="Static Badge" src="https://img.shields.io/badge/Grafana-%23F46800?style=flat&logo=Grafana&logoColor=white"> <img alt="Static Badge" src="https://img.shields.io/badge/Elastic%20Stack-%23005571?style=flat&logo=Elastic%20Stack&logoColor=white">
 
+<img alt="Static Badge" src="https://img.shields.io/badge/prometheus-%23E6522C?style=flat&logo=prometheus&logoColor=white"> <img alt="Static Badge" src="https://img.shields.io/badge/Grafana-%23F46800?style=flat&logo=Grafana&logoColor=white">
+
+<img alt="Static Badge" src="https://img.shields.io/badge/Elastic%20Stack-%23005571?style=flat&logo=Elastic%20Stack&logoColor=white">
 
 <br>
 
