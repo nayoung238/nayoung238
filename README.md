@@ -1,4 +1,4 @@
-# 실패 속에서 본질을 찾아내는 나영입니다 👋
+## 실패 속에서 본질을 찾아내는 나영입니다 👋
 
 **불확실한 상황**에서 최적의 솔루션을 찾아가는 것을 좋아합니다.<br>
 '일단 돌아가는' 이 아닌 '**제대로 돌아가는**' 코드 작성을 좋아합니다.
@@ -37,7 +37,7 @@
 
 ## 🛠️ 기술 스택
 
-#### DEV
+### DEV
 
 <img src="https://img.shields.io/badge/Java-%23007396?style=flat&logo=Java&logoColor=white">
 
@@ -48,11 +48,11 @@
 <img alt="Static Badge" src="https://img.shields.io/badge/Resilience4J-%23231F20?style=flat&logo=Resilience4J&logoColor=white">
 
 
-#### DB
+### DB
 
 <img alt="Static Badge" src="https://img.shields.io/badge/MySQL-%234479A1?style=flat&logo=MySQL&logoColor=white"> <img alt="Static Badge" src="https://img.shields.io/badge/MongoDB-%2347A248?style=flat&logo=MongoDB&logoColor=white">
 
-#### Test & Monitoring
+### Test & Monitoring
 
 <img alt="Static Badge" src="https://img.shields.io/badge/JUnit5-%2325A162?style=flat&logo=JUnit5&logoColor=white">
 
