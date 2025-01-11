@@ -7,19 +7,19 @@
 
 ## 📚 리소스 최적화 리스트, 근데 실패를 곁들인...
 
-#### CI/CD 파이프라인 개선해 **4m 4s -> 1m 16s로 시간 단축**
+#### CI/CD 파이프라인 개선해 4m 4s -> 1m 16s로 시간 단축
 - workflow에 [gradle 패키지 캐싱 단계](https://github.com/imzero238/cicd-test) 추가
 
 <br>
 
-#### [Bloom Filter로 DB I/O 최소화](https://medium.com/@im_zero/bloom-filter%EB%A1%9C-db-%EB%B6%80%ED%95%98-%EA%B0%90%EC%86%8C-%EC%84%B1%EB%8A%A5-61-%EA%B0%9C%EC%84%A0-e46e8ce62d6d)해 **성능 61% 개선**
+#### [Bloom Filter로 DB I/O 최소화](https://medium.com/@im_zero/bloom-filter%EB%A1%9C-db-%EB%B6%80%ED%95%98-%EA%B0%90%EC%86%8C-%EC%84%B1%EB%8A%A5-61-%EA%B0%9C%EC%84%A0-e46e8ce62d6d)해 성능 61% 개선
 
 - **154.15ms -> 59.17ms로 개선**
 - Unique 제약 조건을 DB Layer가 아닌 Service Layer에서 확인
 
 <br>
 
-#### [Lua Script로 Redis 트랜잭션 구현](https://medium.com/@im_zero/%EC%BF%A0%ED%8F%B0-%EB%B0%9C%EA%B8%89%EC%9D%84-%EC%9C%84%ED%95%9C-redis-streams-lua-script-%EC%A0%81%EC%9A%A9%EA%B8%B0-5f3dc4d02b2c)해 **81.9% 시간 단축**
+#### [Lua Script로 Redis 트랜잭션 구현](https://medium.com/@im_zero/%EC%BF%A0%ED%8F%B0-%EB%B0%9C%EA%B8%89%EC%9D%84-%EC%9C%84%ED%95%9C-redis-streams-lua-script-%EC%A0%81%EC%9A%A9%EA%B8%B0-5f3dc4d02b2c)해 81.9% 시간 단축
 <img width="650" alt="lua_script_session_callback_performance_result" src="https://github.com/user-attachments/assets/d39daa5c-d13a-4e8a-9ecd-a39c716c757c" />
 
 - SessionCallback 대신 Lua script 사용해 **2.73s -> 0.495s 개선**
@@ -31,15 +31,15 @@
 
 - **배치 단위로 쓰기 버퍼링 목표 달성** (사용 중인 MySQL, MongoDB 쓰기 버퍼링 기능에서 아이디어 획득)
 - [Topology 코드](https://github.com/imzero238/Item-service/blob/master/src/main/java/com/ecommerce/itemservice/kafka/config/streams/StockAggregationTopology.java#L42)
-- 그러나 Drop Event 처리를 위한 **Window + Grace 기간에 따른 버퍼링**이 메모리 문제로 이어져 적용 실패
+- *그러나 Drop Event 처리를 위한 **Window + Grace 기간에 따른 버퍼링**이 메모리 문제로 이어져 적용 실패*
 
 <br>
 
-#### [Kafka Stremas Join](https://medium.com/@im_zero/kstream-ktable-join-%EC%A0%81%EC%9A%A9-%EC%8B%A4%ED%8C%A8%EA%B8%B0-f7b8bfa11e42)으로 **DB I/O 50% 감소 & 처리 속도 83% 개선**, 그러나...😅
+#### [Kafka Stremas Join](https://medium.com/@im_zero/kstream-ktable-join-%EC%A0%81%EC%9A%A9-%EC%8B%A4%ED%8C%A8%EA%B8%B0-f7b8bfa11e42)으로 DB I/O 50% 감소 & 처리 속도 83% 개선, 그러나...😅
 
 - **처리 속도 10.2s -> 1.7s 개선**
 - [KStream-KTable Join 코드](https://github.com/imzero238/Order-service/blob/master/src/main/java/com/ecommerce/orderservice/kafka/config/streams/KStreamKTableJoinConfig.java#L83)
-- 그러나 원천 데이터의 빠른 영속화 불가로 적용 실패
+- *그러나 원천 데이터의 빠른 영속화 불가로 적용 실패*
 
 <br>
 
