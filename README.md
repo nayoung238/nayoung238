@@ -48,7 +48,7 @@
 <img width="700" alt="in_clause_padding_performance_result" src="https://github.com/user-attachments/assets/34238bd1-8c4d-4c24-bcd2-11b549a12815" />
 
 - IN 절 padding 설정으로 최대한 같은 SQL 구문 재사용 유도
-- 초반 속도 0.0041s vs 0.00385s
+- 초반 속도 4.1ms vs 3.8ms
 - [@DynamicUpdate 대신 @Version 사용해 cached SQL 구문 사용](https://medium.com/@im_zero/version-vs-dynamicupdate-342d27dc59fd)
 
 <br>
