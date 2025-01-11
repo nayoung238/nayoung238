@@ -21,7 +21,7 @@
 <br>
 
 #### [Lua Script로 Redis 트랜잭션 구현](https://medium.com/@im_zero/%EC%BF%A0%ED%8F%B0-%EB%B0%9C%EA%B8%89%EC%9D%84-%EC%9C%84%ED%95%9C-redis-streams-lua-script-%EC%A0%81%EC%9A%A9%EA%B8%B0-5f3dc4d02b2c)해 처리 속도 81.9% 개선
-<img width="650" alt="lua_script_session_callback_performance_result" src="https://github.com/user-attachments/assets/d39daa5c-d13a-4e8a-9ecd-a39c716c757c" />
+<img width="700" alt="lua_script_session_callback_performance_result" src="https://github.com/user-attachments/assets/9bd0b0df-c675-4f1d-bdd0-0bae625d1740" />
 
 - SessionCallback 대신 Lua script 사용해 처리 속도 **2.73s -> 0.495s**로 단축
 - [Lua Script 코드](https://github.com/imzero238/Coupon-service/blob/main/src/main/java/com/ecommerce/couponservice/redis/manager/CouponStockRedisManager.java#L121)
@@ -45,7 +45,7 @@
 <br>
 
 #### [Hibernate Query Plan Cache](https://medium.com/@im_zero/hibernate-query-plan-cache-oom-%EC%97%90%EB%9F%AC-%ED%95%B4%EA%B2%B0-298f3feae93a)활용해 OOM 에러 해결
-<img width="650" alt="in_clause_padding_performance_result" src="https://github.com/user-attachments/assets/d27b40dd-463f-4d27-b592-5aa056aece40" />
+<img width="700" alt="in_clause_padding_performance_result" src="https://github.com/user-attachments/assets/34238bd1-8c4d-4c24-bcd2-11b549a12815" />
 
 - IN 절 padding 설정으로 최대한 같은 SQL 구문 재사용 유도
 - 초반 속도 0.0041s vs 0.00385s
