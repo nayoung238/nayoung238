@@ -19,7 +19,7 @@
 
 <br>
 
-#### [Lua Script로 Redis 트랜잭션 구현]((https://medium.com/@im_zero/%EC%BF%A0%ED%8F%B0-%EB%B0%9C%EA%B8%89%EC%9D%84-%EC%9C%84%ED%95%9C-redis-streams-lua-script-%EC%A0%81%EC%9A%A9%EA%B8%B0-5f3dc4d02b2c))해 **81.9% 시간 단축**
+#### [Lua Script로 Redis 트랜잭션 구현](https://medium.com/@im_zero/%EC%BF%A0%ED%8F%B0-%EB%B0%9C%EA%B8%89%EC%9D%84-%EC%9C%84%ED%95%9C-redis-streams-lua-script-%EC%A0%81%EC%9A%A9%EA%B8%B0-5f3dc4d02b2c)해 **81.9% 시간 단축**
 <img width="650" alt="lua_script_session_callback_performance_result" src="https://github.com/user-attachments/assets/d39daa5c-d13a-4e8a-9ecd-a39c716c757c" />
 
 - SessionCallback 대신 Lua script 사용해 **2.73s -> 0.495s 개선**
