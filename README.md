@@ -4,7 +4,7 @@
 
 <br>
 
-## 📚 리소스 최적화 리스트, 근데 실패를 곁들인...
+## 🔨 리소스 최적화 리스트, 근데 실패를 곁들인...
 
 #### [IDOR 수평적 권한 상승](https://github.com/nayoung238/Banking-API?tab=readme-ov-file#idor-insecure-direct-object-reference-%ED%95%B4%EA%B2%B0) 이슈 해결
 - JWT (Bearer Auth) 기반 인증 강화
@@ -12,7 +12,7 @@
 
 <br>
 
-### [CompletableFuture 기반 Open API 설계](https://github.com/nayoung238/Banking-API?tab=readme-ov-file#completablefuture-%EA%B8%B0%EB%B0%98-open-api-%EC%84%A4%EA%B3%84)
+#### [CompletableFuture 기반 Open API 설계](https://github.com/nayoung238/Banking-API?tab=readme-ov-file#completablefuture-%EA%B8%B0%EB%B0%98-open-api-%EC%84%A4%EA%B3%84)
 
 - Open API 호출 제한으로 네트워크 비용 절감
 - 락을 완전 배제한 스레드 상태 전환
@@ -26,16 +26,16 @@
 
 <br>
 
-#### Lua Script로 Redis 트랜잭션 구현해 처리 속도 81.9% 개선 및 네트워크 비용 절감
+#### Lua Script로 처리 속도 81.9% 개선 및 네트워크 비용 절감
 <img width="700" alt="lua_script_session_callback_performance_result" src="https://github.com/user-attachments/assets/9bd0b0df-c675-4f1d-bdd0-0bae625d1740" />
 
-- [SessionCallback](https://github.com/nayoung238/E-commerce-API/blob/main/coupon-api/src/main/java/com/ecommerce/couponservice/redis/manager/CouponStockRedisManager.java#L55)에서 [Lua script](https://github.com/nayoung238/E-commerce-API/blob/main/coupon-api/src/main/java/com/ecommerce/couponservice/redis/manager/CouponStockRedisManager.java#L121) 로 리팩토링
+- Redis 트랜잭션 구현 시 [SessionCallback](https://github.com/nayoung238/E-commerce-API/blob/main/coupon-api/src/main/java/com/ecommerce/couponservice/redis/manager/CouponStockRedisManager.java#L55)에서 [Lua script](https://github.com/nayoung238/E-commerce-API/blob/main/coupon-api/src/main/java/com/ecommerce/couponservice/redis/manager/CouponStockRedisManager.java#L121) 로 리팩토링
 - 여러 명령어 일괄 전송해 네트워크 비용 절감
 - 처리 속도 **2.73s → 0.495s**로 단축
 
 <br>
 
-#### Kafka Streams 윈도우 집계로 DB I/O 최소화, 그러나...😅
+#### Kafka Streams 윈도우 집계로 DB I/O 최소화, 그러나...
 
 - **배치 단위로 쓰기 버퍼링 목표 달성** (MySQL, MongoDB 쓰기 버퍼링 기능에서 아이디어 획득)
 - 카프카 스트림즈 윕도우 합계 [Topology](https://github.com/nayoung238/E-commerce-API/blob/main/item-api/src/main/java/com/ecommerce/itemservice/kafka/config/StockAggregationTopology.java#L41)
@@ -43,7 +43,7 @@
 
 <br>
 
-#### Kafka Streams [KStream-KTable Join](https://github.com/nayoung238/E-commerce-API/blob/main/order-api/src/main/java/com/ecommerce/orderservice/kafka/config/streams/KStreamKTableJoinConfig.java#L83)으로 DB I/O 50% 감소 및 처리 속도 83% 개선, 그러나...😅
+#### Kafka Streams [KStream-KTable Join](https://github.com/nayoung238/E-commerce-API/blob/main/order-api/src/main/java/com/ecommerce/orderservice/kafka/config/streams/KStreamKTableJoinConfig.java#L83)으로 DB I/O 50% 감소 및 처리 속도 83% 개선, 그러나...
 
 - 처리 속도 **10.2s -> 1.7s**로 단축
 - ❌ 그러나 원천 데이터의 빠른 영속화 불가로 적용 실패
