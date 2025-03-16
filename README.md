@@ -1,59 +1,62 @@
 ## 👋 실패 속에서 본질을 찾아내는 나영입니다
 
-**불확실한 상황**에서 최적의 솔루션을 찾아가는 것을 좋아합니다.<br>
-'**제대로 돌아가는**' 코드 작성을 좋아합니다.
+**불확실한 상황**에서도 응답은 빠르고 비용은 최소화한 최적의 솔루션을 만드는 것을 좋아합니다.
 
 <br>
 
 ## 📚 리소스 최적화 리스트, 근데 실패를 곁들인...
 
-#### CI/CD 파이프라인 개선해 처리 속도 68.9% 개선
-- workflow에 [gradle 패키지 캐싱 단계](https://github.com/imzero238/cicd-test) 추가
-- 처리 속도 **4m 4s -> 1m 16s**로 단축
+#### [IDOR 수평적 권한 상승](https://github.com/nayoung238/Banking-API?tab=readme-ov-file#idor-insecure-direct-object-reference-%ED%95%B4%EA%B2%B0) 이슈 해결
+- JWT (Bearer Auth) 기반 인증 강화
+- 데이터 설계 및 URL 변경
 
 <br>
 
-#### [Bloom Filter로 DB I/O 최소화](https://medium.com/@im_zero/bloom-filter%EB%A1%9C-db-%EB%B6%80%ED%95%98-%EA%B0%90%EC%86%8C-%EC%84%B1%EB%8A%A5-61-%EA%B0%9C%EC%84%A0-e46e8ce62d6d)해 처리 속도 61% 개선
+### [CompletableFuture 기반 Open API 설계](https://github.com/nayoung238/Banking-API?tab=readme-ov-file#completablefuture-%EA%B8%B0%EB%B0%98-open-api-%EC%84%A4%EA%B3%84)
 
-- 처리 속도 **154.15ms -> 59.17ms**로 단축
+- Open API 호출 제한으로 네트워크 비용 절감
+- 락을 완전 배제한 스레드 상태 전환
+
+<br>
+
+#### [Bloom Filter로 DB I/O 최소화](https://medium.com/@nayoung238/bloom-filter%EB%A1%9C-db-%EB%B6%80%ED%95%98-%EA%B0%90%EC%86%8C-%EC%84%B1%EB%8A%A5-61-%EA%B0%9C%EC%84%A0-e46e8ce62d6d)해 처리 속도 61% 개선
+
+- 처리 속도 **154.15ms → 59.17ms**로 단축
 - Unique 제약 조건을 DB Layer가 아닌 Service Layer에서 확인
 
 <br>
 
-#### [Lua Script로 Redis 트랜잭션 구현](https://medium.com/@im_zero/%EC%BF%A0%ED%8F%B0-%EB%B0%9C%EA%B8%89%EC%9D%84-%EC%9C%84%ED%95%9C-redis-streams-lua-script-%EC%A0%81%EC%9A%A9%EA%B8%B0-5f3dc4d02b2c)해 처리 속도 81.9% 개선
+#### Lua Script로 Redis 트랜잭션 구현해 처리 속도 81.9% 개선 및 네트워크 비용 절감
 <img width="700" alt="lua_script_session_callback_performance_result" src="https://github.com/user-attachments/assets/9bd0b0df-c675-4f1d-bdd0-0bae625d1740" />
 
-- SessionCallback 대신 Lua script 사용해 처리 속도 **2.73s -> 0.495s**로 단축
-- [Lua Script 코드](https://github.com/imzero238/Coupon-service/blob/main/src/main/java/com/ecommerce/couponservice/redis/manager/CouponStockRedisManager.java#L121)
+- [SessionCallback](https://github.com/nayoung238/E-commerce-API/blob/main/coupon-api/src/main/java/com/ecommerce/couponservice/redis/manager/CouponStockRedisManager.java#L55)에서 [Lua script](https://github.com/nayoung238/E-commerce-API/blob/main/coupon-api/src/main/java/com/ecommerce/couponservice/redis/manager/CouponStockRedisManager.java#L121) 로 리팩토링
+- 여러 명령어 일괄 전송해 네트워크 비용 절감
+- 처리 속도 **2.73s → 0.495s**로 단축
 
 <br>
 
-#### [Kafka Streams 윈도우 집계로 DB I/O 최소화](https://medium.com/@im_zero/kafka-streams%EC%9D%98-window-results-%EC%BB%A8%ED%8A%B8%EB%A1%A4%ED%95%98%EA%B8%B0-3c20c360cf02), 그러나...😅
+#### Kafka Streams 윈도우 집계로 DB I/O 최소화, 그러나...😅
 
-- **배치 단위로 쓰기 버퍼링 목표 달성** (사용 중인 MySQL, MongoDB 쓰기 버퍼링 기능에서 아이디어 획득)
-- [Topology 코드](https://github.com/imzero238/Item-service/blob/master/src/main/java/com/ecommerce/itemservice/kafka/config/streams/StockAggregationTopology.java#L42)
-- ❌ 그러나 Drop Event 처리를 위한 **Window + Grace 기간에 따른 버퍼링**이 메모리 문제로 이어져 적용 실패
+- **배치 단위로 쓰기 버퍼링 목표 달성** (MySQL, MongoDB 쓰기 버퍼링 기능에서 아이디어 획득)
+- 카프카 스트림즈 윕도우 합계 [Topology](https://github.com/nayoung238/E-commerce-API/blob/main/item-api/src/main/java/com/ecommerce/itemservice/kafka/config/StockAggregationTopology.java#L41)
+- ❌ 그러나 Drop Event 처리 → **Window + Grace 기간에 따른 버퍼링**이 메모리 문제로 이어져 적용 실패
 
 <br>
 
-#### [Kafka Stremas Join](https://medium.com/@im_zero/kstream-ktable-join-%EC%A0%81%EC%9A%A9-%EC%8B%A4%ED%8C%A8%EA%B8%B0-f7b8bfa11e42)으로 DB I/O 50% 감소 & 처리 속도 83% 개선, 그러나...😅
+#### Kafka Streams [KStream-KTable Join](https://github.com/nayoung238/E-commerce-API/blob/main/order-api/src/main/java/com/ecommerce/orderservice/kafka/config/streams/KStreamKTableJoinConfig.java#L83)으로 DB I/O 50% 감소 및 처리 속도 83% 개선, 그러나...😅
 
 - 처리 속도 **10.2s -> 1.7s**로 단축
-- [KStream-KTable Join 코드](https://github.com/imzero238/Order-service/blob/master/src/main/java/com/ecommerce/orderservice/kafka/config/streams/KStreamKTableJoinConfig.java#L83)
 - ❌ 그러나 원천 데이터의 빠른 영속화 불가로 적용 실패
 
 <br>
 
-#### [Hibernate Query Plan Cache](https://medium.com/@im_zero/hibernate-query-plan-cache-oom-%EC%97%90%EB%9F%AC-%ED%95%B4%EA%B2%B0-298f3feae93a)활용해 OOM 에러 해결
-<img width="700" alt="in_clause_padding_performance_result" src="https://github.com/user-attachments/assets/34238bd1-8c4d-4c24-bcd2-11b549a12815" />
-
-- IN 절 padding 설정으로 최대한 같은 SQL 구문 재사용 유도
-- 초반 속도 4.1ms vs 3.8ms
-- [@DynamicUpdate 대신 @Version 사용해 cached SQL 구문 사용](https://medium.com/@im_zero/version-vs-dynamicupdate-342d27dc59fd)
+#### CI/CD 파이프라인 개선해 처리 속도 68.9% 개선
+- CI workflow에 [gradle 패키지 캐싱 단계](https://github.com/nayoung238/Banking-API/blob/develop/.github/workflows/build-and-test-ci.yml#L39) 추가해 처리 속도 68.9% 개선
+- **4m 4s -> 1m 16s** 단축
 
 <br>
 
-더 많은 경험을 [medium](https://medium.com/@im_zero)에서 공유 중... 💚
+더 많은 경험을 [medium](https://medium.com/@nayoung238)에서 공유 중... 💚
 
 <br>
 
@@ -64,7 +67,7 @@
 ### DEV
 
 <img alt="Static Badge" src="https://img.shields.io/badge/java17-%23007396?style=for-the-badge&logo=java&logoColor=white"> <img alt="Static Badge" src="https://img.shields.io/badge/Spring%20Boot-%236DB33F?style=for-the-badge&logo=Spring%20Boot&logoColor=white"> <img alt="Static Badge" src="https://img.shields.io/badge/Spring Data JPA-%236DB33F?style=for-the-badge&logo=Spring&logoColor=white"> <img alt="Static Badge" src="https://img.shields.io/badge/Spring Cloud Gateway-%236DB33F?style=for-the-badge&logo=Spring&logoColor=white"><br>
-<img alt="Static Badge" src="https://img.shields.io/badge/Apache%20Kafka-%23231F20?style=for-the-badge&logo=Apache%20Kafka&logoColor=white"> <img alt="Static Badge" src="https://img.shields.io/badge/Redis-%23FF4438?style=for-the-badge&logo=Redis&logoColor=white"> <img alt="Static Badge" src="https://img.shields.io/badge/Resilience 4J-%23231F20?style=for-the-badge&logoColor=white">
+<img alt="Static Badge" src="https://img.shields.io/badge/Apache%20Kafka-%23231F20?style=for-the-badge&logo=Apache%20Kafka&logoColor=white"> <img alt="Static Badge" src="https://img.shields.io/badge/Resilience 4J-%23231F20?style=for-the-badge&logoColor=white">
 
 
 ### DB
