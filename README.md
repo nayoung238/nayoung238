@@ -78,14 +78,3 @@
 ### Test & Monitoring
 
 <img alt="Static Badge" src="https://img.shields.io/badge/JUnit 5-%2325A162?style=for-the-badge&logo=JUnit5&logoColor=white"><br><img alt="Static Badge" src="https://img.shields.io/badge/prometheus-%23E6522C?style=for-the-badge&logo=prometheus&logoColor=white"> <img alt="Static Badge" src="https://img.shields.io/badge/Grafana-%23F46800?style=for-the-badge&logo=Grafana&logoColor=white">
-
-<br>
-
-<a href="https://github.com/devxb/gitanimals">
-<img
-  src="https://render.gitanimals.org/farms/imzero238"
-  width="600"
-  height="300"
-/>
-</a>
-</div>
